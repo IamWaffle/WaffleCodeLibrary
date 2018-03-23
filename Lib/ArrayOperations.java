@@ -1,3 +1,5 @@
+package lib;
+
 public class ArrayOperations {
 	
 	public static int getTotal(int[] array) {
@@ -126,34 +128,51 @@ public class ArrayOperations {
 		return lowest;
 	}
 	
+	public static boolean compare(int[] array, int [] array2) {
+		boolean tf;
+		
+		if (array.length == array2.length) {
+			tf = true;
+		}
+		else {
+			tf = false;
+		}
+		
+		return tf;
+	}
+	
+	public static boolean compare(float[] array, float [] array2) {
+		boolean tf;
+		
+		if (array.length == array2.length) {
+			tf = true;
+		}
+		else {
+			tf = false;
+		}
+		
+		return tf;
+	}
+	
+	public static boolean compare(double[] array, double  [] array2) {
+		boolean tf;
+		
+		if (array.length == array2.length) {
+			tf = true;
+		}
+		else {
+			tf = false;
+		}
+			
+		return tf;
+	}
+	
 	public static int sequentialSearch(int[] array, int searchNum) {
 		int returnNum = -1;
 		
 		for (int i = 0; i < array.length; i++ ) {
 			if(array[i] == searchNum) {
-				returnNum = i; 
-			}
-		}
-		return returnNum;
-	}
-	
-	public static int sequentialSearch(double[] array, double searchNum) {
-		int returnNum = -1;
-		
-		for (int i = 0; i < array.length; i++ ) {
-			if(array[i] == searchNum) {
-				returnNum = i; 
-			}
-		}
-		return returnNum;
-	}
-	
-	public static int sequentialSearch(float[] array, float searchNum) {
-		int returnNum = -1;
-		
-		for (int i = 0; i < array.length; i++ ) {
-			if(array[i] == searchNum) {
-				returnNum = i; 
+				returnNum = array[i]; 
 			}
 		}
 		return returnNum;
@@ -168,6 +187,19 @@ public class ArrayOperations {
 			}
 		}
 		return returnNum;
+	}
+	
+	public static boolean searchTerm(String[] array, String searchString) {
+		boolean found = false;
+		
+		for (int i = 0; i < array.length; i++ ) {
+			if(array[i].compareTo(searchString) == 0) {
+				found = true; 
+			}
+		}
+		
+		return found;
+		
 	}
 	
 	public static int findMax(int[] array, int size) {
